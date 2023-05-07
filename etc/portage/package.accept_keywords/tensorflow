@@ -1,0 +1,10 @@
+sci-libs/tensorflow
+dev-libs/nsync
+dev-python/google-pasta
+net-libs/google-cloud-cpp
+sci-visualization/tensorboard
+sci-libs/keras
+sci-libs/tensorflow-estimator
+dev-util/bazel
+dev-python/grpcio-tools
+dev-python/google-auth-oauthlib

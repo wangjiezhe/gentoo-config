@@ -1,0 +1,5 @@
+sci-libs/caffe2 cuda nnpack qnnpack xnnpack ffmpeg opencl opencv distributed tensorpipe
+# sci-libs/caffe2 fbgemm
+dev-util/nvidia-cuda-toolkit profiler
+sci-libs/caffe2 PYTHON_SINGLE_TARGET: -* python3_10
+sci-libs/pytorch PYTHON_SINGLE_TARGET: -* python3_10

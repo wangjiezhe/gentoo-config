@@ -1,0 +1,15 @@
+# image formats
+*/* jpeg jpeg2k png webp tiff svg heif jbig hdri avif
+
+# file formats
+*/* pdf djvu xml postscript
+
+# compress methods
+*/* zstd lzip lz4 lzo lzma brotli zip
+
+# fonts
+*/* truetype
+
+# languages support
+*/* python
+*/* perl

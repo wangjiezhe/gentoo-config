@@ -1,0 +1,5 @@
+dev-java/icedtea headless-awt -alsa -cups
+dev-java/icedtea-bin headless-awt -alsa -cups
+dev-java/openjdk headless-awt -alsa -cups
+dev-java/openjdk-bin headless-awt -alsa -cups
+#app-text/ghostscript-gpl cups

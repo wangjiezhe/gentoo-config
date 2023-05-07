@@ -1,0 +1,8 @@
+dev-libs/glib static-libs
+sys-libs/zlib static-libs
+sys-apps/attr static-libs
+dev-libs/libpcre2 static-libs
+
+app-emulation/qemu static-user
+app-emulation/qemu QEMU_SOFTMMU_TARGETS: -* mips64el mipsel
+app-emulation/qemu QEMU_USER_TARGETS: -* mips64el mipsn32el mipsel

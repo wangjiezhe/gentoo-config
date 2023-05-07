@@ -1,0 +1,3 @@
+media-video/ffmpeg amf bluray dav1d svt-av1 x264 x265
+media-video/ffmpeg mp3
+media-libs/libheif x265
