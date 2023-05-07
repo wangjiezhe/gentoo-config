@@ -1,0 +1,10 @@
+#sci-libs/caffe2 compiler-gcc-11
+media-libs/opencv compiler-gcc-11
+sci-libs/gloo gloo compiler-gcc-11
+#dev-cpp/eigen compiler-gcc-11
+#sys-cluster/openmpi compiler-gcc-11
+#sci-libs/gloo compiler-gcc-11
+#sci-libs/NNPACK compiler-gcc-11
+#sci-libs/QNNPACK compiler-gcc-11
+#sci-libs/XNNPACK compiler-gcc-11
+#sci-libs/tensorpipe compiler-gcc-11

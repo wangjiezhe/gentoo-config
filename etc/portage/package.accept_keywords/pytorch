@@ -19,3 +19,4 @@ dev-python/PeachPy
 dev-python/Opcodes
 dev-libs/libnop
 dev-libs/asmjit
+sci-libs/gloo
