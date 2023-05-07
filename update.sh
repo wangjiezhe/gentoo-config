@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-ETC_DIRS=("bash/bashrc.d" "portage" "pkgdev" "sysctl.d")
-ETC_FILES=("fonts/conf.d/00-windows-font-dir.conf" "vim/vimrc.local" "wsl.conf")
+cp -r /etc/portage etc
+cp -r /etc/pkgdev etc
+cp /etc/sysctl.d/*.conf etc/sysctl.d
+cp /etc/bash/bashrc.d/{git,ip,lfs,mathematica} etc/bash/bashrc.d
 
-for d in ${ETC_DIRS[@]}; do
-  cp -r "/etc/${d}" "etc/${d}"
-done
+ETC_FILES=("fonts/conf.avail/09-windows-font-dir.conf" "vim/vimrc.local" "wsl.conf")
 
 for f in ${ETC_FILES[@]}; do
   cp "/etc/${f}" "etc/${f}"
