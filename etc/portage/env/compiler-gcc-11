@@ -1,4 +1,2 @@
 CC="gcc-11"
 CXX="g++-11"
-
-CUDAHOSTCXX="g++-11"

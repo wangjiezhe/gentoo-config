@@ -1,12 +1,13 @@
 sci-libs/caffe2 PYTHON_SINGLE_TARGET: -* python3_10
 sci-libs/pytorch PYTHON_SINGLE_TARGET: -* python3_10
+sci-libs/torchvision PYTHON_SINGLE_TARGET: -* python3_10
 
 sci-libs/caffe2 cuda nnpack qnnpack xnnpack ffmpeg opencl opencv
-sci-libs/caffe2 distributed tensorpipe gloo # mpi
-# sci-libs/caffe2 fbgemm
+sci-libs/caffe2 distributed tensorpipe gloo mpi
+sci-libs/caffe2 fbgemm
 dev-util/nvidia-cuda-toolkit profiler
 
 sys-cluster/openmpi cuda cxx
-sci-libs/gloo mpi libuv
+sci-libs/gloo cuda mpi libuv
 dev-cpp/eigen cuda
 media-libs/opencv contrib cuda

@@ -20,3 +20,4 @@ dev-python/Opcodes
 dev-libs/libnop
 dev-libs/asmjit
 sci-libs/gloo
+sci-libs/torchvision
