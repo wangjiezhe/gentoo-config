@@ -1,3 +1,4 @@
 #sci-libs/gloo gloo
+#sci-libs/tensorpipe tensorpipe
 media-libs/opencv opencv
 #sci-libs/torchvision torchvision

@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+rm -r etc/portage
+rm -r etc/pkgdev
+rm -r etc/sysctl.d
+rm -r etc/bash/bashrc.d
+
+mkdir -p etc/sysctl.d
+mkdir -p etc/bash/bashrc.d
+
 cp -r /etc/portage etc
 cp -r /etc/pkgdev etc
 cp /etc/sysctl.d/*.conf etc/sysctl.d

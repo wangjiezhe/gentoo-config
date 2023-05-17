@@ -11,3 +11,4 @@ sys-cluster/openmpi cuda cxx
 sci-libs/gloo cuda mpi libuv
 dev-cpp/eigen cuda
 media-libs/opencv contrib cuda
+sci-libs/tensorpipe cuda
