@@ -11,7 +11,7 @@ mkdir -p etc/bash/bashrc.d
 cp -r /etc/portage etc
 cp -r /etc/pkgdev etc
 cp /etc/sysctl.d/*.conf etc/sysctl.d
-cp /etc/bash/bashrc.d/{git,ip,lfs,mathematica} etc/bash/bashrc.d
+cp /etc/bash/bashrc.d/{fzf,git,ip,lfs,mathematica}.sh etc/bash/bashrc.d
 
 ETC_FILES=("fonts/conf.avail/09-windows-font-dir.conf" "vim/vimrc.local" "wsl.conf")
 
