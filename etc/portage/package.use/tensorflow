@@ -1,4 +1,4 @@
-sci-libs/tensorflow cuda mpi
+sci-libs/tensorflow cuda mpi xla
 # required by virtual/jdk-11-r2::gentoo
 # required by dev-util/bazel-5.3.0::gentoo
 # required by sci-libs/keras-2.11.0::gentoo

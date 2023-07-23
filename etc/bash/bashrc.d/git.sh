@@ -5,25 +5,10 @@ PROMPT_DIRTRIM=0
 ## Custom PS1
 unset PS1
 
-PS1='\[$(RT_CODE="$?";
-tput sc;
-if [[ ${RT_CODE} == 0 ]]; then
-  tput setaf 3;
-  printf "%*s" ${COLUMNS} "$(date +%H:%M:%S)";
-else
-  tput setaf 196;
-  printf "%*s" $((${COLUMNS}-9)) "[${RT_CODE}]";
-  tput setaf 3;
-  printf "%*s" 9 "$(date +%H:%M:%S)";
-fi;
-tput sgr0;
-tput rc;
-exit ${RT_CODE})\]'
-
 if [[ ${EUID} == 0 ]]; then
-  PS1+='\[\033[01;91m\]\h\[\033[00m\] '             # light red root@host
+  PS1='\[\033[01;91m\]\h\[\033[00m\] '             # light red root@host
 else
-  PS1+='\[\033[01;32m\]\u@\h\[\033[00m\] '          # green user@host
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\] '          # green user@host
 fi
 
 PS1+='\[\033[01;34m\]\w\[\033[00m\]'                # blue current working directory
@@ -36,6 +21,21 @@ else
 fi
 
 #PS1+='\[\e]0;\u@\h: \w\a\]'                        # terminal title: user@host: dir
+
+PS1+='\[$(RT_CODE="$?";
+tput sc;
+if [[ ${RT_CODE} == 0 ]]; then
+  tput setaf 3;
+  printf "%*s" $((${COLUMNS}-2)) "$(date +%H:%M:%S)";
+else
+  tput setaf 196;
+  printf "%*s" $((${COLUMNS}-11)) "[${RT_CODE}]";
+  tput setaf 3;
+  printf "%*s" 9 "$(date +%H:%M:%S)";
+fi;
+tput sgr0;
+tput rc;
+exit ${RT_CODE})\]'
 
 
 

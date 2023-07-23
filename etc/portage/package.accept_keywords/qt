@@ -1,0 +1,7 @@
+dev-python/PyQt6
+dev-python/PyQt6-sip
+dev-python/PyQt6-WebEngine
+dev-python/pyside6
+dev-python/pyside6-tools
+dev-python/shiboken6
+dev-qt/*
