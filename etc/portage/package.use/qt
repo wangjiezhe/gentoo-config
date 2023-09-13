@@ -1,5 +1,6 @@
-dev-qt/qtwebengine widgets
+dev-qt/qtwebengine widgets opengl
 dev-python/PyQt6 opengl webchannel websockets
 dev-qt/qtbase opengl egl eglfs
 dev-qt/qtdeclarative opengl
 dev-python/pyside6 webchannel webengine websockets qml quick
+dev-qt/qttools opengl
