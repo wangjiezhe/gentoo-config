@@ -1,2 +1,4 @@
-dev-lang/rust system-bootstrap system-llvm
+dev-lang/rust system-bootstrap system-llvm rust-analyzer rustfmt clippy rust-src
 # dev-lang/rust llvm-libunwind
+dev-lang/rust-bin rust-analyzer rustfmt clippy
+sys-apps/eza man

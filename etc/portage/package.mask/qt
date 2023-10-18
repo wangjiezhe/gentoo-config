@@ -1,0 +1,6 @@
+>=dev-qt/qtbase-6.6.0
+>=dev-qt/qtwayland-6.6.0
+>=dev-qt/qttools-6.6.0
+>=dev-qt/qttranslations-6.6.0
+>=dev-qt/qt5compat-6.6.0
+>=dev-qt/qtsvg-6.6.0

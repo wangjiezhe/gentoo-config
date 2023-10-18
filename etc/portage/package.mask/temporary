@@ -1,2 +1,5 @@
 =sys-kernel/mips-sources-5.4.214
-=dev-libs/ntl-11.5.1-r4
+#=dev-libs/ntl-11.5.1-r4
+>=media-video/ffmpeg-6.0
+=dev-python/PyQt6-6.5.3
+=sci-libs/tensorflow-2.11.0

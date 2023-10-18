@@ -1,1 +1,6 @@
 sci-mathematics/mathematica cuda ffmpeg
+
+dev-qt/qtbase wayland
+dev-qt/qtwayland compositor
+
+app-text/ghostscript-gpl cups

@@ -1,0 +1,10 @@
+sys-apps/eza
+dev-lang/rust
+dev-lang/rust-bin
+virtual/rust
+
+sys-devel/llvm
+sys-devel/llvm-common
+sys-devel/llvm-toolchain-symlinks
+sys-devel/llvmgold
+sys-libs/llvm-libunwind
