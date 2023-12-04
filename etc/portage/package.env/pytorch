@@ -3,3 +3,4 @@
 media-libs/opencv opencv
 #sci-libs/caffe2 caffe2
 #sci-libs/torchvision torchvision
+dev-libs/nccl nccl

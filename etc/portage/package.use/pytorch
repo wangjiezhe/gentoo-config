@@ -13,3 +13,9 @@ sci-libs/gloo cuda mpi libuv
 dev-cpp/eigen cuda
 media-libs/opencv contrib cuda
 sci-libs/tensorpipe cuda
+
+sci-libs/torchvision cuda
+sci-libs/torchaudio cuda ffmpeg
+media-sound/sox amr encode flac id3tag ogg oss
+sci-libs/torchmetrics audio image text
+sci-libs/nltk data

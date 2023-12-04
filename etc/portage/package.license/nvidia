@@ -1,3 +1,5 @@
 x11-drivers/nvidia-drivers NVIDIA-r2
 dev-util/nvidia-cuda-toolkit NVIDIA-CUDA
 dev-libs/cudnn NVIDIA-cuDNN
+dev-libs/cusparselt NVIDIA-SDK
+sci-libs/tensorrt NVIDIA-TensorRT

@@ -1,3 +1,6 @@
 dev-util/nvidia-cuda-toolkit
 dev-libs/cudnn
 dev-libs/cudnn-frontend
+dev-libs/nccl
+dev-libs/cusparselt
+sci-libs/tensorrt

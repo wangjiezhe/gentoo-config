@@ -8,3 +8,9 @@ sci-libs/tensorflow-estimator
 dev-util/bazel
 dev-python/grpcio-tools
 dev-python/google-auth-oauthlib
+dev-python/protobuf-python
+dev-libs/protobuf
+dev-cpp/abseil-cpp
+dev-python/grpcio
+net-libs/grpc
+dev-python/h5py

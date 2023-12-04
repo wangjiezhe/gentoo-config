@@ -1,1 +1,1 @@
-MYCMAKEARGS="-DCUDA_HOST_COMPILER=/usr/x86_64-pc-linux-gnu/gcc-bin/11/x86_64-pc-linux-gnu-gcc -DCUDA_ARCH_BIN=7.5"
+MYCMAKEARGS="-DCUDA_HOST_COMPILER=/usr/x86_64-pc-linux-gnu/gcc-bin/12/x86_64-pc-linux-gnu-gcc -DCUDA_ARCH_BIN=8.9 -DCMAKE_CXX_STANDARD=17"

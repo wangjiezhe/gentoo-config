@@ -1,0 +1,1 @@
+NVCC_GENCODE="-gencode=arch=compute_89,code=sm_89"

@@ -22,20 +22,20 @@ fi
 
 #PS1+='\[\e]0;\u@\h: \w\a\]'                        # terminal title: user@host: dir
 
-PS1+='\[$(RT_CODE="$?";
-tput sc;
-if [[ ${RT_CODE} == 0 ]]; then
-  tput setaf 3;
-  printf "%*s" $((${COLUMNS}-2)) "$(date +%H:%M:%S)";
-else
-  tput setaf 196;
-  printf "%*s" $((${COLUMNS}-11)) "[${RT_CODE}]";
-  tput setaf 3;
-  printf "%*s" 9 "$(date +%H:%M:%S)";
-fi;
-tput sgr0;
-tput rc;
-exit ${RT_CODE})\]'
+# PS1+='\[$(RT_CODE="$?";
+# tput sc;
+# if [[ ${RT_CODE} == 0 ]]; then
+#   tput setaf 3;
+#   printf "%*s" $((${COLUMNS}-2)) "$(date +%H:%M:%S)";
+# else
+#   tput setaf 196;
+#   printf "%*s" $((${COLUMNS}-11)) "[${RT_CODE}]";
+#   tput setaf 3;
+#   printf "%*s" 9 "$(date +%H:%M:%S)";
+# fi;
+# tput sgr0;
+# tput rc;
+# exit ${RT_CODE})\]'
 
 
 

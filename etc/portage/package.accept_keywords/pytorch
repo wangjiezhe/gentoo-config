@@ -21,3 +21,16 @@ dev-libs/libnop
 dev-libs/asmjit
 sci-libs/gloo
 sci-libs/torchvision
+dev-python/pytorch-lightning
+dev-python/ratelimit
+dev-python/lightning-utilities
+dev-python/python-fire
+sci-libs/transformers
+sci-libs/huggingface_hub
+sci-libs/safetensors
+sci-libs/tokenizers
+sci-libs/torchmetrics
+dev-python/pystoi
+sci-libs/lpips
+sci-libs/torch-fidelity
+sci-libs/nltk

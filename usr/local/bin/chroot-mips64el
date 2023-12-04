@@ -1,0 +1,189 @@
+#!/bin/bash
+# set -x
+
+source /etc/init.d/functions.sh
+
+ROOT="/usr/mips64el-unknown-linux-gnu"
+USE_WRAPPER="no"
+
+print_help() {
+  cat <<-HELP
+
+Arguments:
+
+--root           - --root=/usr/mips64el-unknown-linux-gnu (default)
+--use-wrapper    - --use-wrapper=yes or no (default)
+
+HELP
+  exit 0
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --root=*)
+      ROOT="${1#*=}"
+      ;;
+    --use-wrapper=*)
+      USE_WRAPPER="${1#*=}"
+      ;;
+    --help|-h)
+      print_help
+      ;;
+    *)
+      echo "Invalid argument given!"
+      print_help
+      exit
+  esac
+  shift
+done
+
+register_qemu_wrapper() {
+  ebegin "Registering qemu-wrapper binaries  (flags: OC)"
+  [ -f "/proc/sys/fs/binfmt_misc/qemu-mips64el" ] \
+    && echo '-1' > /proc/sys/fs/binfmt_misc/qemu-mips64el
+  [ -f "/proc/sys/fs/binfmt_misc/qemu-mips64n32el" ] \
+    && echo '-1' > /proc/sys/fs/binfmt_misc/qemu-mipsn32el
+  echo ':qemu-mips64el:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08\x00:\xff\xff\xff\xff\xff\xff\xff\x00\x00\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/local/bin/qemu-wrapper-n64:OC' > /proc/sys/fs/binfmt_misc/register
+  echo ':qemu-mipsn32el:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x00\x00\x00:\xff\xff\xff\xff\xff\xff\xff\x00\x00\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x00\x00\x00:/usr/local/bin/qemu-wrapper-n32:OC' > /proc/sys/fs/binfmt_misc/register
+  eend $?
+}
+
+deregister_qemu_wrapper() {
+  ebegin "Unregistering qemu-wrapper binaries"
+  echo '-1' > /proc/sys/fs/binfmt_misc/qemu-mips64el
+  echo '-1' > /proc/sys/fs/binfmt_misc/qemu-mipsn32el
+  eend 0
+}
+
+install_qemu_wrapper() {
+  ebegin "Confirm qemu-wrapper binaries are installed"
+  mkdir -pv ${ROOT}/usr/local/bin
+  [ ! -x "${ROOT}/usr/local/bin/qemu-wrapper-n64" ] && \
+    install /usr/local/bin/qemu-wrapper-n64 ${ROOT}/usr/local/bin/
+  [ ! -x "${ROOT}/usr/local/bin/qemu-wrapper-n32" ] && \
+    install /usr/local/bin/qemu-wrapper-n32 ${ROOT}/usr/local/bin/
+  eend 0
+}
+
+register_qemu() {
+  /etc/init.d/qemu-binfmt start
+}
+
+deregister_qemu() {
+  /etc/init.d/qemu-binfmt stop
+}
+
+install_qemu_binary() {
+  ebegin "Confirm qemu binaries are installed"
+  for QEMU_TARGET in mips64el mipsn32el mipsel; do
+    if [ ! -x "${ROOT}/usr/bin/qemu-${QEMU_TARGET}" ]; then
+      install /usr/bin/qemu-${QEMU_TARGET} ${ROOT}/usr/bin
+    fi
+  done
+  eend 0
+}
+
+
+mount_filesystem() {
+  ebegin "Mounting file systems"
+  mkdir -pv ${ROOT}/{proc,sys,dev/shm}
+  mount -t proc /proc ${ROOT}/proc
+  mount -o rbind,rslave /sys ${ROOT}/sys
+  mount -o rbind,rslave /dev ${ROOT}/dev
+  mount --types tmpfs --options nosuid,nodev,noexec shm ${ROOT}/dev/shm
+  mount -o rbind,rslave /run ${ROOT}/run
+  eend $?
+}
+
+umount_filesystem() {
+  ebegin "Unmounting file systems"
+  umount -R ${ROOT}/run
+  umount -R ${ROOT}/dev
+  umount -R ${ROOT}/sys
+  umount ${ROOT}/proc
+  eend 0
+}
+
+mount_portage() {
+  ebegin "Mounting portage directories"
+  mkdir -pv ${ROOT}/var/db/repos/{gentoo,crossdev,local}
+  mount -o bind /var/db/repos/gentoo ${ROOT}/var/db/repos/gentoo
+  mount -o bind /var/db/repos/crossdev ${ROOT}/var/db/repos/crossdev
+  mount -o bind /var/db/repos/local ${ROOT}/var/db/repos/local
+  eend $?
+}
+
+umount_portage() {
+  ebegin "Unmounting portage directories"
+  umount ${ROOT}/var/db/repos/local
+  umount ${ROOT}/var/db/repos/crossdev
+  umount ${ROOT}/var/db/repos/gentoo
+  eend 0
+}
+
+mount_src_linux() {
+  if [ ! -L ${ROOT}/usr/src/linux ]; then
+    ebegin "Mounting /usr/src/linux"
+    mkdir -pv ${ROOT}/usr/src/linux
+    mount -o bind /usr/src/WSL2-Linux-Kernel-linux-msft-wsl-$(uname -r | cut -d- -f1) ${ROOT}/usr/src/linux
+    eend $?
+  fi
+}
+
+umount_src_linux() {
+  if [ ! -L ${ROOT}/usr/src/linux ]; then
+    ebegin "Unmounting /usr/src/linux"
+    umount ${ROOT}/usr/src/linux
+    eend 0
+  fi
+}
+
+setup_portage() {
+  ebegin "Configuring network and portage"
+  cp -f /etc/resolv.conf ${ROOT}/etc/resolv.conf
+  sed -i 's/^ROOT/#ROOT/' ${ROOT}/etc/portage/make.conf
+  sed -i 's/^CBUILD/#CBUILD/' ${ROOT}/etc/portage/make.conf
+  eend $?
+}
+
+cleanup_portage() {
+  ebegin "Restore configuration"
+  rm ${ROOT}/etc/resolv.conf
+  sed -i 's/^#ROOT/ROOT/' ${ROOT}/etc/portage/make.conf
+  sed -i 's/^#CBUILD/CBUILD/' ${ROOT}/etc/portage/make.conf
+  eend 0
+}
+
+setup() {
+  install_qemu_binary
+  if [ "${USE_WRAPPER}" = "yes" ]; then
+    install_qemu_wrapper
+    register_qemu_wrapper
+  else
+    register_qemu
+  fi
+  mount_filesystem
+  mount_portage
+  #mount_src_linux
+  setup_portage
+}
+
+cleanup() {
+  cleanup_portage
+  #umount_src_linux
+  umount_portage
+  umount_filesystem
+  if [ "${USE_WRAPPER}" = "yes" ]; then
+    deregister_qemu_wrapper
+  else
+    deregister_qemu
+  fi
+}
+
+main() {
+  setup
+  chroot ${ROOT} /bin/bash --login
+  cleanup
+}
+
+main
