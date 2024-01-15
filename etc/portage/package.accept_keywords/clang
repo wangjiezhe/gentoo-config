@@ -1,0 +1,15 @@
+#sys-devel/clang
+#sys-devel/clang-common
+#sys-devel/clang-runtime
+#sys-devel/clang-toolchain-symlinks
+#dev-python/clang-python
+#sys-devel/llvm
+#sys-devel/llvm-common
+#sys-devel/llvm-toolchain-symlinks
+#sys-devel/llvmgold
+#sys-libs/llvm-libunwind
+#sys-libs/libomp
+#sys-libs/compiler-rt
+#sys-libs/compiler-rt-sanitizers
+#dev-debug/lldb
+dev-debug/lldb-mi

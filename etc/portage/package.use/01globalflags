@@ -6,6 +6,7 @@
 
 # compress methods
 */* zstd lzip lz4 lzo lzma brotli zip
+*/* natspec
 
 # fonts
 */* truetype

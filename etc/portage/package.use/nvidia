@@ -1,1 +1,4 @@
 sci-libs/tensorrt data samples
+dev-util/nvidia-cuda-toolkit nsight vis-profiler sanitizer
+dev-util/nvidia-cuda-toolkit examples
+dev-libs/cudnn-frontend samples

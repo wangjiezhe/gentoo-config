@@ -4,3 +4,5 @@ dev-libs/cudnn-frontend
 dev-libs/nccl
 dev-libs/cusparselt
 sci-libs/tensorrt
+dev-libs/dlpack
+dev-libs/catch2

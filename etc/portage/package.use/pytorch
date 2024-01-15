@@ -5,6 +5,7 @@
 sci-libs/caffe2 cuda nnpack qnnpack xnnpack ffmpeg opencl opencv
 sci-libs/caffe2 distributed tensorpipe gloo mpi
 sci-libs/caffe2 fbgemm
+sci-libs/caffe2 magma
 dev-util/nvidia-cuda-toolkit profiler
 
 sys-cluster/openmpi cuda cxx
@@ -19,3 +20,6 @@ sci-libs/torchaudio cuda ffmpeg
 media-sound/sox amr encode flac id3tag ogg oss
 sci-libs/torchmetrics audio image text
 sci-libs/nltk data
+
+dev-python/pyarrow parquet snappy
+dev-libs/apache-arrow compute re2 parquet dataset snappy
