@@ -5,7 +5,8 @@ net-libs/google-cloud-cpp
 sci-visualization/tensorboard
 sci-libs/keras
 sci-libs/tensorflow-estimator
-dev-util/bazel
+# move dev-util/bazel dev-build/bazel
+dev-build/bazel
 dev-python/grpcio-tools
 dev-python/google-auth-oauthlib
 dev-python/protobuf-python

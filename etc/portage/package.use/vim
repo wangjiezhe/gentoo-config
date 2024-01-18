@@ -1,2 +1,2 @@
-app-editors/vim perl python racket tcl
+app-editors/vim perl python racket tcl vim-pager
 app-editors/gvim perl python racket tcl

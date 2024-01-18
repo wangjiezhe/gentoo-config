@@ -23,3 +23,5 @@ sci-libs/nltk data
 
 dev-python/pyarrow parquet snappy
 dev-libs/apache-arrow compute re2 parquet dataset snappy
+
+dev-python/FBGEMM_GPU cuda

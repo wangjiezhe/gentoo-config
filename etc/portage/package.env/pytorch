@@ -6,3 +6,4 @@ media-libs/opencv opencv
 dev-libs/nccl nccl
 dev-cpp/tbb cxx-standard-17
 sci-libs/magma magma
+dev-libs/cutlass cutlass

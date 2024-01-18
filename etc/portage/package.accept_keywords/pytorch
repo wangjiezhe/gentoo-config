@@ -61,3 +61,6 @@ dev-python/typing_inspect
 dev-python/pyre-extensions
 sci-libs/torchtnt
 sci-libs/torcheval
+dev-python/setuptools-git-version
+dev-python/setuptools-git-versioning
+dev-python/FBGEMM_GPU
