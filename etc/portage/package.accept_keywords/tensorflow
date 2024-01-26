@@ -16,3 +16,4 @@ dev-python/grpcio
 net-libs/grpc
 dev-python/h5py
 dev-python/ml_dtypes
+dev-libs/re2

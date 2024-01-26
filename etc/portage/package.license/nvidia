@@ -3,3 +3,4 @@ dev-util/nvidia-cuda-toolkit NVIDIA-CUDA
 dev-libs/cudnn NVIDIA-cuDNN
 dev-libs/cusparselt NVIDIA-cuSPARSELt
 sci-libs/tensorrt NVIDIA-TensorRT
+dev-python/cuda-python NVIDIA-CUDA-Python

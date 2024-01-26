@@ -64,3 +64,15 @@ sci-libs/torcheval
 dev-python/setuptools-git-version
 dev-python/setuptools-git-versioning
 dev-python/FBGEMM_GPU
+sci-libs/magma
+dev-util/ruff
+sci-libs/pytorch-msssim
+dev-python/plotly
+sci-libs/compressai
+dev-python/sacrebleu
+dev-python/rouge-score
+dev-python/hf-doc-builder
+dev-python/graphql-core
+dev-python/aiofiles
+dev-python/gql
+sci-libs/faiss

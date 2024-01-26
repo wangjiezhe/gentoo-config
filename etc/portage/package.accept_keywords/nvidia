@@ -6,3 +6,8 @@ dev-libs/cusparselt
 sci-libs/tensorrt
 dev-libs/dlpack
 dev-libs/catch2
+dev-python/pyclibrary
+dev-python/cuda-python
+dev-python/pytest-benchmark
+dev-python/treelib
+dev-python/cutlass

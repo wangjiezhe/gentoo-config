@@ -12,7 +12,7 @@ sys-cluster/openmpi cuda cxx
 sys-cluster/mpich threads mpi-threads
 sci-libs/gloo cuda mpi libuv
 dev-cpp/eigen cuda
-media-libs/opencv contrib cuda
+media-libs/opencv contrib cuda cudnn ffmpeg opencl opengl qt6
 sci-libs/tensorpipe cuda
 
 sci-libs/torchvision cuda
@@ -25,3 +25,4 @@ dev-python/pyarrow parquet snappy
 dev-libs/apache-arrow compute re2 parquet dataset snappy
 
 dev-python/FBGEMM_GPU cuda
+sci-libs/faiss python cuda
