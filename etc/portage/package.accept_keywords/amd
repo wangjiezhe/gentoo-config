@@ -1,0 +1,5 @@
+sci-libs/blis
+sci-libs/aocl-blas
+sci-libs/aocl-utils
+sci-libs/aocl-lapack
+sci-libs/openblas

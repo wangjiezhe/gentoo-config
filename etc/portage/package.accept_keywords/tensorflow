@@ -15,5 +15,6 @@ dev-cpp/abseil-cpp
 dev-python/grpcio
 net-libs/grpc
 dev-python/h5py
-dev-python/ml_dtypes
+# move dev-python/ml_dtypes dev-python/ml-dtypes
+dev-python/ml-dtypes
 dev-libs/re2

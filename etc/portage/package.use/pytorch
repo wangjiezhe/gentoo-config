@@ -17,7 +17,7 @@ sci-libs/tensorpipe cuda
 
 sci-libs/torchvision cuda
 sci-libs/torchaudio cuda ffmpeg
-media-sound/sox amr encode flac id3tag ogg oss
+media-sound/sox amr encode flac id3tag ogg oss opus sndfile twolame wavpack
 sci-libs/torchmetrics audio image text
 sci-libs/nltk data
 
@@ -26,3 +26,4 @@ dev-libs/apache-arrow compute re2 parquet dataset snappy
 
 dev-python/FBGEMM_GPU cuda
 sci-libs/faiss python cuda
+dev-libs/sentencepiece static-libs

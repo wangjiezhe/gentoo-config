@@ -1,0 +1,9 @@
+net-misc/gdown
+dev-python/conda
+dev-python/archspec
+dev-python/truststore
+dev-python/conda-libmamba-solver
+dev-util/mamba
+dev-cpp/reproc
+dev-cpp/tl-expected
+sys-libs/libsolv

@@ -76,3 +76,17 @@ dev-python/graphql-core
 dev-python/aiofiles
 dev-python/gql
 sci-libs/faiss
+sci-libs/torchsnapshot
+sci-libs/torchtnt
+dev-python/iopath
+dev-python/rjieba
+sci-libs/evaluate
+sci-libs/accelerate
+dev-python/google-re2
+sci-libs/torchrec
+dev-python/deepdiff
+dev-python/lightning
+dev-libs/dynolog
+dev-python/dill
+dev-libs/sentencepiece
+dev-python/sentencepiece

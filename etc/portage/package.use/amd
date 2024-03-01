@@ -1,0 +1,3 @@
+sci-libs/openblas index-64bit
+# sci-libs/aocl-lapack scc supermatrix
+sci-libs/aocl-utils static-libs
