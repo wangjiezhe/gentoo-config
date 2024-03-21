@@ -1,11 +1,1 @@
 =sci-libs/tensorflow-2.11.0
-
-=sci-libs/tensorflow-2.14.1
-=sci-libs/tensorflow-estimator-2.14.0
-=sci-visualization/tensorboard-2.14.1
-=sci-libs/keras-2.14.0
-
-=sci-libs/tensorflow-2.15.0
-=sci-libs/tensorflow-estimator-2.15.0
-=sci-visualization/tensorboard-2.15.1
-=sci-libs/keras-2.15.0

@@ -39,18 +39,20 @@ alias glgga="git log --stat --graph --decorate --all"
 # Avoid duplicates
 HISTCONTROL=ignoredups:erasedups
 # Big history
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 # After each command, append to the history file and reread it
 PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND;"}'history -a'
 
 export PATH=$HOME/.local/bin:$PATH
+export DISPLAY=127.0.0.1:0
 
 alias dfc="/usr/bin/dfc -dT"
 
 export TF_ENABLE_ONEDNN_OPTS=0
+export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 export HF_ENDPOINT=https://hf-mirror.com
 

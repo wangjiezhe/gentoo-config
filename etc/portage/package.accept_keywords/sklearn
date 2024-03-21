@@ -1,3 +1,4 @@
-sci-libs/scikit-learn
+# move sci-libs/scikit-learn dev-python/scikit-learn
+dev-python/scikit-learn
 dev-python/pythran
 dev-cpp/xsimd

@@ -1,5 +1,6 @@
 app-i18n/man-pages-zh_CN
-app-misc/wslu
+# move app-misc/wslu app-emulation/wslu
+app-emulation/wslu
 app-vim/vimcdoc
 app-misc/cheat
 

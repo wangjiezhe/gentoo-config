@@ -1,3 +1,6 @@
 app-text/texlive cjk graphics luatex png pstricks science truetype xetex
 app-text/texlive L10N: en zh ko ja fr de el
 media-libs/harfbuzz icu
+app-text/zathura synctex
+app-text/texlive-core -xindy
+app-text/poppler qt5

@@ -18,3 +18,7 @@ dev-python/h5py
 # move dev-python/ml_dtypes dev-python/ml-dtypes
 dev-python/ml-dtypes
 dev-libs/re2
+dev-python/namex
+dev-python/optree
+dev-python/dm-tree
+dev-python/astunparse
